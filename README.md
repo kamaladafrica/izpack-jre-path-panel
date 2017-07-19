@@ -1,4 +1,7 @@
 # JREPathPanel for IzPack
+
+[ ![Download](https://api.bintray.com/packages/kamaladafrica/maven/izpack-jre-path-panel/images/download.svg) ](https://bintray.com/kamaladafrica/maven/izpack-jre-path-panel/_latestVersion)
+
 Same as [JDKPathPanel](https://github.com/izpack/izpack/blob/master/izpack-panel/src/main/java/com/izforge/izpack/panels/jdkpath/JDKPathPanel.java) but for JRE.
 The only difference between JREPathPanel and JDKPathPanel is that the JREPathPanel accept a JDK as choice too.
 
