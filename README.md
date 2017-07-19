@@ -12,12 +12,11 @@ Es.
 This is a simple [Custom Panel](https://izpack.atlassian.net/wiki/spaces/IZPACK/pages/491687/Custom+Panels), so you have to add it to your project.
 The usage is the same as JDKPathPanel, so you can show the [JDKPathPanel official documentation](https://izpack.atlassian.net/wiki/spaces/IZPACK/pages/491644/JDKPathPanel).
 
-### Sample configuration
+### Maven configuration
 
 In pom.xml
 
 ```xml
-...
 <plugin>
 	<groupId>org.codehaus.izpack</groupId>
 	<artifactId>izpack-maven-plugin</artifactId>
@@ -40,19 +39,23 @@ In pom.xml
 		<dependency>
 			<groupId>it.kamaladafrica.izpack.panel</groupId>
 			<artifactId>jre-path-panel</artifactId>
-			<version>1.0-SNAPSHOT</version>
+			<version>1.0</version>
 		</dependency>
 	</dependencies>
 </plugin>
 ...
+<repositories>
+	<repository>
+		<id>jcenter</id>
+		<name>jcenter</name>
+		<url>http://jcenter.bintray.com</url>
+ 	</repository>
+</repositories>
 ```
 
 In install.xml
 ```xml
-...
 <panels>
   <panel classname="it.kamaladafrica.izpack.panel.jrepath.JREPathPanel"/>
 </panels>
-
-...
 ```
