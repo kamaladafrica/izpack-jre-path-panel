@@ -13,25 +13,64 @@
 
   <packaging>jar</packaging>
 
+  <url>https://github.com/kamaladafrica/izpack-jre-path-panel</url>  
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.target>1.6</maven.compiler.target>
+    <maven.compiler.source>1.6</maven.compiler.source>
+
+    <version.izpack>5.1.1</version.izpack>
+
+    <skipTests>true</skipTests>
+  </properties>
+
+  <prerequisites>
+    <maven>3.0.3</maven>
+  </prerequisites>
+
+  <issueManagement>
+      <system>GitHub Issues</system>
+      <url>https://github.com/kamaladafrica/izpack-jre-path-panel/issues</url>
+  </issueManagement>
+
+  <inceptionYear>2017</inceptionYear>
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <scm>
+    <connection>scm:git:https://github.com/kamaladafrica/izpack-jre-path-panel.git</connection>
+    <developerConnection>scm:git:https://github.com/kamaladafrica/izpack-jre-path-panel.git</developerConnection>
+    <url>https://github.com/kamaladafrica/izpack-jre-path-panel</url>
+    <tag>HEAD</tag>
+  </scm>
+
   <developers>
     <developer>
       <id>kamaladafrica</id>
       <name>Alessio D'Innocenti</name>
-      <email>alessio.dinnocenti@gmail.com</email>
+      <email>alessio.dinnocenti@google.com</email>
+      <roles>
+        <role>developer</role>
+      </roles>
       <timezone>+1</timezone>
     </developer>
   </developers>
 
-  <dependencies>
-    <dependency>
-      <groupId>org.codehaus.izpack</groupId>
-      <artifactId>izpack-compiler</artifactId>
-      <version>${version.izpack}</version>
-      <scope>provided</scope>
-    </dependency>
-  </dependencies>
+  <distributionManagement>
+      <repository>
+         <id>bintray</id>
+         <url>https://api.bintray.com/maven/kamaladafrica/maven/izpack-jre-path-panel/;publish=1</url>
+      </repository>
+  </distributionManagement>
    
- <build>
+  <build>
     <pluginManagement>
       <plugins>
         <plugin>
@@ -64,15 +103,29 @@
           <artifactId>maven-assembly-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
+        <plugin>
+            <artifactId>maven-scm-plugin</artifactId>
+            <version>1.8.1</version>
+            <configuration>
+                <tag>v${project.version}</tag>
+            </configuration>
+        </plugin>
+        <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>versions-maven-plugin</artifactId>
+            <version>2.1</version>
+        </plugin>
       </plugins>
     </pluginManagement>
   </build>
     
-  <properties>
-    <maven.compiler.target>1.6</maven.compiler.target>
-    <maven.compiler.source>1.6</maven.compiler.source>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <version.izpack>5.1.1</version.izpack>
-  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>org.codehaus.izpack</groupId>
+      <artifactId>izpack-compiler</artifactId>
+      <version>${version.izpack}</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
 
 </project>
